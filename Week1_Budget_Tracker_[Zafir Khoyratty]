@@ -1,0 +1,543 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/zaaaaaaffffff/timeur/blob/main/Week1_Budget_Tracker_%5BZafir%20Khoyratty%5D\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "45b851c9",
+      "metadata": {
+        "id": "45b851c9"
+      },
+      "source": [
+        "# Mini Project 01: AI-Powered Budget Tracker\n",
+        "# ISYS2001 Introduction to Business Programming\n",
+        "\n",
+        "**Instructions:**\n",
+        "1. Save a copy of this notebook to your Google Drive (File > Save a copy in Drive)  \n",
+        "2. Rename it to include your name: `Week1_Budget_Tracker_[YourName]`  \n",
+        "3. Complete all sections and code cells  \n",
+        "4. Document your AI interactions as you go\n"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "a60fc4c8",
+      "metadata": {
+        "id": "a60fc4c8"
+      },
+      "source": [
+        "## Part 1: Environment Setup and First Steps"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "2e576bd1",
+      "metadata": {
+        "id": "2e576bd1"
+      },
+      "outputs": [],
+      "source": [
+        "# Run this cell to test your environment\n",
+        "print(\"🎉 Welcome to ISYS2001: Introduction to Business Programming!\")\n",
+        "print(\"📊 Project: Personal Finance Assistant\")\n",
+        "print(\"🤖 Today's Goal: Build a Simple Budget Tracker with AI Help\")\n",
+        "\n",
+        "# Import datetime to timestamp your work\n",
+        "from datetime import datetime\n",
+        "print(f\"\\n📅 Worksheet started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "7ac0ada2",
+      "metadata": {
+        "id": "7ac0ada2"
+      },
+      "source": [
+        "## Part 2: Your First AI Prompt\n",
+        "\n",
+        "Use an AI assistant (Gemini in Colab, ChatGPT, or GitHub Copilot) to create a program that:\n",
+        "- Asks the user for their name\n",
+        "- Asks for their monthly income  \n",
+        "- Prints a personalized welcome message\n",
+        "\n",
+        "### 📝 Document Your AI Prompt Below:"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "62045e66",
+      "metadata": {
+        "id": "62045e66",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "1462e599-d53a-406d-f335-40fd06110eae"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your name: zafir\n",
+            "Enter your monthly income: 69420\n",
+            "\n",
+            "Welcome, zafir!\n",
+            "Your reported monthly income is 69420.\n",
+            "We're glad to have you here!\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Ask the user for their name\n",
+        "name = input(\"Enter your name: \")\n",
+        "\n",
+        "# Ask for their monthly income\n",
+        "income = input(\"Enter your monthly income: \")\n",
+        "\n",
+        "# Print a personalized welcome message\n",
+        "print(f\"\\nWelcome, {name}!\")\n",
+        "print(f\"Your reported monthly income is {income}.\")\n",
+        "print(\"We're glad to have you here!\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "daaaec49",
+      "metadata": {
+        "id": "daaaec49"
+      },
+      "source": [
+        "### 🔍 Evidence Package Entry #1"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "667d3549",
+      "metadata": {
+        "id": "667d3549"
+      },
+      "outputs": [],
+      "source": [
+        "# Evidence Package Documentation\n",
+        "evidence_1 = {\n",
+        "    \"timestamp\": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),\n",
+        "    \"context\": \"I wanted to create a simple input/output program to practice AI prompting\",\n",
+        "    \"ai_tool_used\": \"Gemini/ChatGPT/Copilot\",  # Update this\n",
+        "    \"what_worked\": \"The AI understood my request and...\",\n",
+        "    \"what_didnt\": \"I had to clarify...\",\n",
+        "    \"what_i_learned\": \"I learned that specific prompts...\"\n",
+        "}\n",
+        "\n",
+        "# Display your evidence\n",
+        "print(\"📋 EVIDENCE PACKAGE #1\")\n",
+        "for key, value in evidence_1.items():\n",
+        "    print(f\"{key}: {value}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "182c831f",
+      "metadata": {
+        "id": "182c831f"
+      },
+      "source": [
+        "## Part 3: Building the Budget Tracker\n",
+        "\n",
+        "Use AI to help you write a program that:\n",
+        "- Allows users to input their monthly income\n",
+        "- Allows users to input up to 3 expenses  \n",
+        "- Calculates remaining budget\n",
+        "- Shows a warning if budget is negative\n",
+        "\n",
+        "### 💡 Pro Tip: Be specific about requirements!"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "74e672e3",
+      "metadata": {
+        "id": "74e672e3"
+      },
+      "outputs": [],
+      "source": [
+        "help me write a program that:\n",
+        "\n",
+        "-Allows users to input their monthly income.\n",
+        "-Allows users to input up to 3 expenses.\n",
+        "-Calculates remaining budget.\n",
+        "-Shows a warning if budget is negative."
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "4bcfacf4",
+      "metadata": {
+        "id": "4bcfacf4"
+      },
+      "source": [
+        "### Paste and Test Your AI-Generated Budget Tracker"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "2501e778",
+      "metadata": {
+        "id": "2501e778",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "2261d7cd-981b-46f4-c6ab-159f69507f88"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your monthly income: 69420\n",
+            "Enter expense 1 (or press Enter to skip): drugs\n",
+            "Invalid input. Please enter a number for the expense.\n",
+            "Enter expense 1 (or press Enter to skip): 3000\n",
+            "Enter expense 2 (or press Enter to skip): 220\n",
+            "Enter expense 3 (or press Enter to skip): 250\n",
+            "\n",
+            "----- Budget Summary -----\n",
+            "Total Income: 69420.0\n",
+            "Total Expenses: 3470.0\n",
+            "Remaining Budget: 65950.0\n",
+            "You are within your budget. Good job!\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Ask user for monthly income\n",
+        "income = float(input(\"Enter your monthly income: \"))\n",
+        "\n",
+        "# Initialize total expenses\n",
+        "total_expenses = 0\n",
+        "\n",
+        "# Allow user to input up to 3 expenses\n",
+        "for i in range(1, 4):\n",
+        "    while True: # Loop until valid input is received\n",
+        "        expense_str = input(f\"Enter expense {i} (or press Enter to skip): \")\n",
+        "\n",
+        "        if expense_str == \"\":\n",
+        "            break  # Stop if user doesn't want to enter more expenses\n",
+        "\n",
+        "        try:\n",
+        "            expense = float(expense_str)\n",
+        "            total_expenses += expense\n",
+        "            break # Exit the inner while loop if input is valid\n",
+        "        except ValueError:\n",
+        "            print(\"Invalid input. Please enter a number for the expense.\")\n",
+        "\n",
+        "# Calculate remaining budget\n",
+        "remaining_budget = income - total_expenses\n",
+        "\n",
+        "# Display results\n",
+        "print(\"\\n----- Budget Summary -----\")\n",
+        "print(f\"Total Income: {income}\")\n",
+        "print(f\"Total Expenses: {total_expenses}\")\n",
+        "print(f\"Remaining Budget: {remaining_budget}\")\n",
+        "\n",
+        "# Warning if budget is negative\n",
+        "if remaining_budget < 0:\n",
+        "    print(\"⚠ Warning: Your budget is negative! You are overspending.\")\n",
+        "else:\n",
+        "    print(\"You are within your budget. Good job!\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "f541d525",
+      "metadata": {
+        "id": "f541d525"
+      },
+      "source": [
+        "### 🐛 Debugging and Refinement"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "3f624a27",
+      "metadata": {
+        "id": "3f624a27",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "26763f30-a253-4b97-8bf7-30b30093cf31"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "🔧 DEBUGGING NOTES:\n",
+            "- no Issue \n",
+            "- no fixing required\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Document any issues and fixes\n",
+        "issues_found = [\n",
+        "    \"no Issue \",\n",
+        "    \"no fixing required\",\n",
+        "    # Add more as needed\n",
+        "]\n",
+        "\n",
+        "print(\"🔧 DEBUGGING NOTES:\")\n",
+        "for item in issues_found:\n",
+        "    print(f\"- {item}\")"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "0772261d",
+      "metadata": {
+        "id": "0772261d"
+      },
+      "outputs": [],
+      "source": [
+        "# REFINED VERSION - Your Working Budget Tracker\n",
+        "# [Paste your corrected/improved code here]"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "ca842a66",
+      "metadata": {
+        "id": "ca842a66"
+      },
+      "source": [
+        "## Part 4: Enhancement Challenge\n",
+        "\n",
+        "Choose ONE feature to add using AI assistance:\n",
+        "- 🏷️ Expense categories (food, transport, entertainment)\n",
+        "- 📊 Show percentage of income spent\n",
+        "- ✅ Input validation (no negative numbers)\n",
+        "- 📝 Detailed budget summary with advice"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "fbd649d2",
+      "metadata": {
+        "id": "fbd649d2"
+      },
+      "outputs": [],
+      "source": [
+        "add Expense categories (food, transport, entertainment)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "b12879f3",
+      "metadata": {
+        "id": "b12879f3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "outputId": "b02d5e28-9717-4a74-eace-6c57f990cc6a"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter your monthly income: 69420\n",
+            "Enter your Food expense: 17000\n",
+            "Enter your Transport expense: 4000\n",
+            "Enter your Entertainment expense: 15000\n",
+            "\n",
+            "----- Budget Summary -----\n",
+            "Monthly Income: 69420.0\n",
+            "Food Expense: 17000.0\n",
+            "Transport Expense: 4000.0\n",
+            "Entertainment Expense: 15000.0\n",
+            "Total Expenses: 36000.0\n",
+            "Remaining Budget: 33420.0\n",
+            "You are within your budget. Good job!\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Ask user for monthly income\n",
+        "income = float(input(\"Enter your monthly income: \"))\n",
+        "\n",
+        "# Initialize expense categories\n",
+        "food = float(input(\"Enter your Food expense: \"))\n",
+        "transport = float(input(\"Enter your Transport expense: \"))\n",
+        "entertainment = float(input(\"Enter your Entertainment expense: \"))\n",
+        "\n",
+        "# Calculate total expenses\n",
+        "total_expenses = food + transport + entertainment\n",
+        "\n",
+        "# Calculate remaining budget\n",
+        "remaining_budget = income - total_expenses\n",
+        "\n",
+        "# Display results\n",
+        "print(\"\\n----- Budget Summary -----\")\n",
+        "print(f\"Monthly Income: {income}\")\n",
+        "print(f\"Food Expense: {food}\")\n",
+        "print(f\"Transport Expense: {transport}\")\n",
+        "print(f\"Entertainment Expense: {entertainment}\")\n",
+        "print(f\"Total Expenses: {total_expenses}\")\n",
+        "print(f\"Remaining Budget: {remaining_budget}\")\n",
+        "\n",
+        "# Warning if budget is negative\n",
+        "if remaining_budget < 0:\n",
+        "    print(\"⚠ Warning: Your budget is negative! You are overspending.\")\n",
+        "else:\n",
+        "    print(\"You are within your budget. Good job!\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "cfa2845b",
+      "metadata": {
+        "id": "cfa2845b"
+      },
+      "source": [
+        "## Part 5: Reflection and Lab Exit Ticket Preparation"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "220ff6b4",
+      "metadata": {
+        "id": "220ff6b4"
+      },
+      "outputs": [],
+      "source": [
+        "# Final Evidence Package Summary\n",
+        "evidence_2 = {\n",
+        "    \"timestamp\": datetime.now().strftime('%Y-%m-%d %H:%M:%S'),\n",
+        "    \"context\": \"Creating the full budget tracker with enhancements\",\n",
+        "    \"ai_tool_used\": \"[ChatGPT]\",\n",
+        "    \"prompts_used\": 3,  # Update this number\n",
+        "    \"iterations_needed\": 1,  # How many times you refined\n",
+        "    \"final_reflection\": \"[How to take user input, How to store data in variablesHow, to perform calculations]\"\n",
+        "}\n",
+        "\n",
+        "print(\"📋 EVIDENCE PACKAGE #2 (Final)\")\n",
+        "for key, value in evidence_2.items():\n",
+        "    print(f\"{key}: {value}\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "69d17be0",
+      "metadata": {
+        "id": "69d17be0"
+      },
+      "source": [
+        "## 🎯 Submission Checklist\n",
+        "\n",
+        "Before submitting:\n",
+        "- ✅ All code cells run without errors\n",
+        "- ✅ You've documented at least 2 AI interactions  \n",
+        "- ✅ Budget tracker accepts income and 3+ expenses\n",
+        "- ✅ Completed both Evidence Packages\n",
+        "- ✅ Attempted the enhancement challenge\n",
+        "- ✅ Reflected on your AI collaboration experience"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "id": "0d85c2f1",
+      "metadata": {
+        "id": "0d85c2f1"
+      },
+      "outputs": [],
+      "source": [
+        "# Generate submission summary\n",
+        "print(\"=\"*50)\n",
+        "print(\"WEEK 1 WORKSHEET COMPLETION SUMMARY\")\n",
+        "print(\"=\"*50)\n",
+        "print(f\"Student Name: [Your Name]\")\n",
+        "print(f\"Completion Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\")\n",
+        "print(\"\\nCore Features Implemented:\")\n",
+        "print(\"✅ Basic income/expense input\")\n",
+        "print(\"✅ Budget calculation\")\n",
+        "print(\"✅ Warning for negative budget\")\n",
+        "print(\"✅ Enhancement: [Your enhancement]\")\n",
+        "print(\"\\nAI Collaboration Stats:\")\n",
+        "print(f\"- AI tools used: [List them]\")\n",
+        "print(f\"- Number of prompts: [Count]\")\n",
+        "print(f\"- Success rate: [Estimate]%\")\n",
+        "print(\"\\n🎉 Ready for Lab Exit Ticket submission!\")"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "id": "63b51742",
+      "metadata": {
+        "id": "63b51742"
+      },
+      "source": [
+        "## 💭 Final Reflection Questions\n",
+        "\n",
+        "**1. What surprised you most about working with AI to generate code?**  \n",
+        "i was surprised that ai could produce this good quality of code with near to zero errros.\n",
+        "\n",
+        "**2. What makes a good prompt vs. a poor prompt?**  \n",
+        "clear, structured and specific.\n",
+        "\n",
+        "**3. How do you see AI tools fitting into your future programming workflow?**  \n",
+        "ai codes could replace the work of programmers as it may be more efficient and prone to less human error.\n",
+        "\n",
+        "---\n",
+        "\n",
+        "### 📁 Save and Next Steps:\n",
+        "1. File > Save a copy in GitHub (if you haven't already)    \n",
+        "2. Prepare evidence for next lab session for the Exit Ticket  \n",
+        "3. Start thinking about Week 2: Variables & Data Types!\n"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "rdAf6Gc517wB"
+      },
+      "id": "rdAf6Gc517wB",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "language_info": {
+      "name": "python"
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
